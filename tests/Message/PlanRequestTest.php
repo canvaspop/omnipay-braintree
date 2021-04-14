@@ -8,6 +8,8 @@
 
 namespace Omnipay\Braintree\Message;
 
+use Braintree\Gateway;
+use Braintree\PlanGateway;
 use Omnipay\Tests\TestCase;
 
 class PlanRequestTest extends TestCase
@@ -40,14 +42,14 @@ class PlanRequestTest extends TestCase
 
     protected function buildMockGateway()
     {
-        $gateway = $this->getMockBuilder('\Braintree\Gateway')
+        $gateway = $this->getMockBuilder(Gateway::class)
             ->disableOriginalConstructor()
             ->setMethods(array(
                 'plan'
             ))
             ->getMock();
 
-        $plan = $this->getMockBuilder('\Braintree\PlanGateway')
+        $plan = $this->getMockBuilder(PlanGateway::class)
             ->disableOriginalConstructor()
             ->getMock();
 

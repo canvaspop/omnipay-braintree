@@ -7,9 +7,8 @@ namespace Omnipay\Braintree\Message;
 class PlanResponse extends Response
 {
     /**
-     * Returns array of Braintree_Plans objects with available plans
-     * If there aren't any plans created it will return empty array.
-     *
+     * Returns array of Braintree\Plan objects with available plans
+     * If there aren't any plans created it will return empty array
      * @return array
      */
     public function getPlansData()

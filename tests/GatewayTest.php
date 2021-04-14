@@ -6,6 +6,7 @@ use Braintree\Digest;
 use Braintree\Version;
 use Braintree\Configuration;
 use Omnipay\Braintree\Gateway;
+use Braintree\WebhookNotification;
 use Omnipay\Tests\GatewayTestCase;
 
 class GatewayTest extends GatewayTestCase
@@ -160,7 +161,7 @@ class GatewayTest extends GatewayTestCase
                 'bt_payload' => $payload
             );
             $request = $gateway->parseNotification($params);
-            $this->assertInstanceOf('\Braintree\WebhookNotification', $request);
+            $this->assertInstanceOf(WebhookNotification::class, $request);
         } else {
             $xml = '<notification><subject></subject></notification>';
             $payload = base64_encode($xml);
@@ -172,7 +173,7 @@ class GatewayTest extends GatewayTestCase
                 'bt_payload' => $payload
             );
             $request = $gateway->parseNotification($params);
-            $this->assertInstanceOf('\Braintree\WebhookNotification', $request);
+            $this->assertInstanceOf(WebhookNotification::class, $request);
         }
     }
 

@@ -4,6 +4,7 @@ namespace Omnipay\Braintree;
 
 use Braintree\Configuration;
 use Braintree\Gateway as BraintreeGateway;
+use Braintree\Exception\InvalidSignature;
 use Braintree\WebhookNotification;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Http\ClientInterface;

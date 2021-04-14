@@ -2,6 +2,7 @@
 
 namespace Omnipay\Braintree\Message;
 
+use Braintree\Configuration;
 use Omnipay\Tests\TestCase;
 use Braintree\Configuration;
 
