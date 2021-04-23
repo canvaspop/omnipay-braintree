@@ -166,16 +166,7 @@ class AuthorizeRequestTest extends TestCase
         $this->assertSame($this->request, $this->request->setServiceFeeAmount('1366'));
         $this->assertSame('1366', $this->request->getServiceFeeAmount());
     }
-
-    public function testGetServiceFeeAmountNoDecimalsRounding()
-    {
-        $this->markTestSkipped('Omnipay does not round the amount.');
-
-        $this->assertSame($this->request, $this->request->setServiceFeeAmount('136.5'));
-        $this->assertSame($this->request, $this->request->setCurrency('JPY'));
-        $this->assertSame('137', $this->request->getServiceFeeAmount());
-    }
-
+    
     /**
      * @expectedException \Omnipay\Common\Exception\InvalidRequestException
      */

@@ -48,9 +48,9 @@ abstract class AbstractRequest extends BaseAbstractRequest
     {
         // When in testMode, use the sandbox environment
         if ($this->getTestMode()) {
-            $this->braintree->config->environment('sandbox');
+            $this->braintree->config::environment('sandbox');
         } else {
-            $this->braintree->config->environment('production');
+            $this->braintree->config::environment('production');
         }
 
         // Set the keys

@@ -184,15 +184,25 @@ class GatewayTest extends GatewayTestCase
      */
     protected function buildGatewayMock($payload)
     {
-        $configuration = $this->getMockBuilder('\Braintree\Configuration')
+        $configuration = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
             ->setMethods(array(
-                'assertHasAccessTokenOrKeys'
+                'assertHasAccessTokenOrKeys',
+                'setPublicKey',
+                'getPublicKey',
+                'getPrivateKey',
+                'environment'
             ))
             ->getMock();
         $configuration->expects($this->any())
             ->method('assertHasAccessTokenOrKeys')
             ->will($this->returnValue(null));
+        $configuration->expects($this->any())
+            ->method('getPublicKey')
+            ->will($this->returnValue('PG5vdGlmaWNhdGlvbj48L25vdGlmaWNhdGlvbj4='));
+        $configuration->expects($this->any())
+            ->method('environment')
+            ->will($this->returnValue('production'));
 
         $configuration->setPublicKey($payload);
 
