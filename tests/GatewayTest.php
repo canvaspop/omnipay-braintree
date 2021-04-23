@@ -28,6 +28,12 @@ class GatewayTest extends GatewayTestCase
         );
     }
 
+    public function tearDown()
+    {
+        parent::tearDown();
+        Configuration::reset();
+    }
+
     public function testFindCustomer()
     {
         $request = $this->gateway->findCustomer(1);
