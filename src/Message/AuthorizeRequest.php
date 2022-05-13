@@ -33,6 +33,7 @@ class AuthorizeRequest extends AbstractRequest
             'taxAmount' => $this->getTaxAmount(),
             'taxExempt' => $this->getTaxExempt(),
             'lineItems' => $this->getLineItems(),
+            'customer' => ['email' => $this->getCustomerEmail()]
         ];
 
         // special validation

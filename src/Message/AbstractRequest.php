@@ -362,6 +362,16 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->setParameter('verificationMerchantAccountId', $value);
     }
 
+    public function getCustomerEmail()
+    {
+        return $this->getParameter('customerEmail');
+    }
+
+    public function setCustomerEmail($value)
+    {
+        return $this->setParameter('customerEmail', $value);
+    }
+
     /**
      * @return array
      */
