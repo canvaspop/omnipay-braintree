@@ -32,15 +32,9 @@
     },
     "require": {
         "omnipay/common": "^3",
-        "braintree/braintree_php": "dev-feature/php8.2-compatibility"
+        "braintree/braintree_php": "^6.11.1"
     },
     "require-dev": {
         "omnipay/tests": "^3"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:markdavidsonEE/braintree_php"
-        }
-    ]
+    }
 }
