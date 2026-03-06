@@ -25,7 +25,7 @@ class Gateway extends AbstractGateway
      * @param HttpRequest      $httpRequest A Symfony HTTP request object
      * @param BraintreeGateway $braintree   The Braintree gateway
      */
-    public function __construct(ClientInterface $httpClient = null, HttpRequest $httpRequest = null, BraintreeGateway $braintree = null)
+    public function __construct(?ClientInterface $httpClient = null, ?HttpRequest $httpRequest = null, ?BraintreeGateway $braintree = null)
     {
         $this->braintree = $braintree ?: Configuration::gateway();
 
